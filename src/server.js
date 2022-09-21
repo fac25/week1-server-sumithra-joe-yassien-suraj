@@ -1,12 +1,3 @@
-//Display posts from other users
-
-// 1. Create object of user / comments
-
-// 2. create a server.get to the home route "/" to display user comments on homepage
-
-// 3.
-
-// Global Variables
 
 const express = require("express");
 
@@ -14,9 +5,28 @@ const server = express();
 
 module.exports = server;
 
-//const userComments =  {{}}
+const posts = [{
+    name: "Zack",
+    comments: "Pizza's are the best!",
+    date: "19/12/2022"
+  },
+    {
+        name: "Anna",
+        comments: "Donuts are yummy!",
+        date: "22/12/2022"
+    }];
 
 server.get("/", (request, response) => {
+
+    const postList = posts.map(post => {
+        return `<div>
+        <h2>${post.name}</h2>
+        <p>${post.comments}</p>
+        <p>${post.date}</p>
+        </div>`
+      })
+
+
   response.send(`
     <!DOCTYPE html>
 <html lang="en">
@@ -40,14 +50,26 @@ server.get("/", (request, response) => {
 
     <!-- Submit new comments goes here -->
     <section>
-            <form></form>
+        <form method="POST">
+             <label for="username">Username</label>
+             <input id="username" name="username" placeholder="Name">
+             <br>
+
+             <br>
+             <label for="opinion"></label>
+             <textarea id="opinion" name="opinion"></textarea>
+
+            <button type="submit">Post</button>
+        </form>
      </section>
 
 
 
     <!-- User comments go here -->
     <section>
-    
+        <ul>
+          ${postList}
+        </ul>
     </section>
     
     </main>
@@ -69,8 +91,11 @@ server.get("/", (request, response) => {
 const bodyParser = express.urlencoded();
 
 server.post("/", bodyParser, (request, response) => {
-  // const name = request.body.name;
-  // const comments = request.body.comment;
+  const name = request.body.username;
+  const comments = request.body.opinion;
 
+  const date = new Date().toLocaleString("en-GB");
+
+  posts.push({name, comments, date})
   response.redirect("/");
 });
