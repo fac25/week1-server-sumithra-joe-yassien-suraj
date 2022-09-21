@@ -99,3 +99,4 @@ server.post("/", bodyParser, (request, response) => {
   posts.push({name, comments, date})
   response.redirect("/");
 });
+
