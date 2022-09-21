@@ -33,7 +33,7 @@ server.get("/", (request, response) => {
     </head>
 
     <header>
-    <h1> Food Opinions </h1>
+    <h1> Food Opinions! </h1>
     </header>
 
     <main>
