@@ -48,3 +48,8 @@ To run:
 - [x] Tests for each server route
 - [x] A responsive, mobile-first design
 - [x] Ensure your app is accessible to as many different users as possible
+
+## Snapshot
+
+![image](https://user-images.githubusercontent.com/90449646/191792233-9b840164-9ce0-4c9d-a100-cf1f334f92ed.png)
+
