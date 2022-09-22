@@ -52,4 +52,9 @@ server.post("/", bodyParser, (request, response) => {
   }
 });
 
+// Missing Routes
+server.use((request, response) => {
+  response.status(404).send(`<h1>Not found</h1>`);
+});
+
 module.exports = server;
