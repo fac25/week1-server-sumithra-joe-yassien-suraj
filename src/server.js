@@ -3,7 +3,9 @@ const { content } = require("./template.js");
 
 const server = express();
 
-module.exports = server;
+// CSS
+const staticHandler = express.static("public");
+server.use(staticHandler);
 
 const posts = [
   {
@@ -49,3 +51,5 @@ server.post("/", bodyParser, (request, response) => {
     response.redirect("/");
   }
 });
+
+module.exports = server;
