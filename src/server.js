@@ -24,7 +24,7 @@ server.get("/", (request, response) => {
         <p>${post.comments}</p>
         <p>${post.date}</p>
         </div>`
-      })
+    })
 
 
   response.send(`

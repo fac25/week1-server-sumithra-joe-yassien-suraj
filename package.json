@@ -11,7 +11,8 @@
     "start": "node src/index.js",
     "test": "node --no-warnings --test",
     "test:1": "node --no-warnings tests/1.test.js",
-    "test:2": "node --no-warnings tests/2.test.js"
+    "test:2": "node --no-warnings tests/2.test.js",
+    "test:3": "node --no-warnings tests/3.test.js"
   },
   "repository": {
     "type": "git",
