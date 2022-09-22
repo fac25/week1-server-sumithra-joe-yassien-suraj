@@ -13,16 +13,21 @@ Make sure you have Git and Node (v18) installed.
 1. Clone this repo and `cd` into the directory
 2. Run `npm install` to install all the dependencies
 3. Run `npm run dev` to start the server.  
-   This uses the `nodemon` library to auto-restart the server when you save changes.
+
+
+This uses the `nodemon` library to auto-restart the server when you save changes.
 
 ## Test
 
-Our test folder contains two tests.
+Our test folder contains three tests.
 
-- [x] Test 2 Displays old posts.
-- [x] Test 3 route responds to post requests
+- [x] Test 1 Tests for missing routes.
+- [x] Test 2 Tests for user messages displayed correctly
+- [x] Test 3 Tests for home route responds to post requests
 
 To run:
+
+`npm run test:1`
 
 `npm run test:2`
 
