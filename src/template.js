@@ -27,13 +27,15 @@ function content(posts, errors = {}) {
     <link rel="stylesheet" type="text/css" href="style.css"/>
   </head>
   <body>
-    <header>
-    <h1 class="center width-sm"> Food Opinions! </h1>
-    </header>
+    
 
     <main>
       <!-- Submit new comments goes here -->
-      <section>
+      <section id="form-container">
+      <header>
+        <h1 class="center width-sm"> Food Opinions! </h1>
+      </header>
+
       <form method="POST" class="center width-sm">
       <label class="sr-only" for="username">Username</label>
           <input id="username" name="username" placeholder="Name" />
@@ -49,6 +51,7 @@ function content(posts, errors = {}) {
       </section>
 
       <!-- User comments go here -->
+      <div id="table-container">
         <div class="table-background">
           <section class="center width-lg">
           <ul class="grid">
@@ -57,6 +60,7 @@ function content(posts, errors = {}) {
         </ul>
       </section>
       </div>
+    </div>
     </main>
   </body>
 </html> `;
