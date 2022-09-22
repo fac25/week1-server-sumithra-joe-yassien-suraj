@@ -32,18 +32,18 @@ function content(posts, errors = {}) {
     <main>
       <!-- Submit new comments goes here -->
       <section id="form-container">
-      <header>
-        <h1 class="center width-sm"> Food Opinions! </h1>
-      </header>
+        <header>
+          <h1 class="center width-sm"> Food Opinions! </h1>
+        </header>
 
-      <form method="POST" class="center width-sm">
-      <label class="sr-only" for="username">Username</label>
+        <form method="POST" class="center ">
+          <label class="sr-only" for="username">Username</label>
           <input id="username" name="username" placeholder="Name" />
           ${validation(errors.name)}
           <br />
           <br />
-          <label for="opinion"></label>
-          <textarea id="opinion" name="opinion"></textarea><br><br>
+          <label class="sr-only" for="opinion">Opinions</label>
+          <textarea id="opinion" name="opinion" placeholder="Pineapples on Pizza is a crime!!!"></textarea><br><br>
           ${validation(errors.comments)}
 
           <button type="submit">Serve up your opinion!</button>
@@ -54,13 +54,12 @@ function content(posts, errors = {}) {
       <div id="table-container">
         <div class="table-background">
           <section class="center width-lg">
-          <ul class="grid">
+            <ul class="grid">
               ${postList.join("")}
-          
-        </ul>
-      </section>
+            </ul>
+          </section>
+        </div>
       </div>
-    </div>
     </main>
   </body>
 </html> `;
@@ -70,7 +69,7 @@ function content(posts, errors = {}) {
 
 function validation(errorMsg) {
   if (errorMsg) {
-    return `<p style = "color: red"> ${errorMsg}</p>`;
+    return `<p class="error"> ${errorMsg}</p>`;
   } else {
     return "";
   }
