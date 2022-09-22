@@ -1,6 +1,6 @@
 function content(posts, errors = {}) {
   const postList = posts.map((post) => {
-    return `<div class="plate">
+    return `<li><div class="plate">
     <span class="inner_plate">
     <div>
         <h2>${sanitisation(post.name)}</h2>
@@ -8,7 +8,8 @@ function content(posts, errors = {}) {
         <p>${sanitisation(post.date)}</p>
         </div>
         </span>
-</div>`;
+</div>
+</li>`;
   });
 
   const content = `
