@@ -1,4 +1,8 @@
+// Returns home page
+// content() has two arguments : post object and error object
+//
 function content(posts, errors = {}) {
+  // Sanitize the user input and makes post list
   const postList = posts.map((post) => {
     return `<li><div class="plate">
     <span class="inner_plate">
@@ -12,6 +16,7 @@ function content(posts, errors = {}) {
 </li>`;
   });
 
+  // make the HTML content
   const content = `
   <!DOCTYPE html>
   <html lang="en">
@@ -68,6 +73,7 @@ function content(posts, errors = {}) {
   return content;
 }
 
+// validate the error message and displays error
 function validation(errorMsg) {
   if (errorMsg) {
     return `<p class="error"> ${errorMsg}</p>`;
@@ -76,6 +82,7 @@ function validation(errorMsg) {
   }
 }
 
+// Sanitize the input string
 function sanitisation(string) {
   return string.replaceAll("<", "&lt;");
 }

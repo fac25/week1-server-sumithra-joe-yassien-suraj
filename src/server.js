@@ -1,12 +1,14 @@
+// Imports express fn
 const express = require("express");
 const { content } = require("./template.js");
 
 const server = express();
 
-// CSS
+// serve CSS and imgs to every route
 const staticHandler = express.static("public");
 server.use(staticHandler);
 
+//Array of user comments with two templates
 const posts = [
   {
     name: "Zack",
@@ -20,15 +22,15 @@ const posts = [
   },
 ];
 
+// Respond to home route get request
 server.get("/", (request, response) => {
   const info = content(posts);
   response.send(info);
 });
 
-// middlewear
-
 const bodyParser = express.urlencoded();
 
+// Handles form submission
 server.post("/", bodyParser, (request, response) => {
   const name = request.body.username;
   const comments = request.body.opinion;
