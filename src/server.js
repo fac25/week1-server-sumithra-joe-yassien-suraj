@@ -55,14 +55,16 @@ server.get("/", (request, response) => {
         <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
 
+    
+    <main>
+    
+    <!-- Submit new comments goes here -->
+
+    <section id="form-container">
     <header>
     <h1 class="center width-sm"> Food Opinions! </h1>
     </header>
 
-    <main>
-
-    <!-- Submit new comments goes here -->
-    <section>
         <form method="POST" class="center width-sm">
              <label class="sr-only" for="username">Username</label>
              <input id="username" name="username" placeholder="Name">
@@ -77,12 +79,17 @@ server.get("/", (request, response) => {
      </section>
 
     <!-- User comments go here -->
+
+    <div id="table-container">
+
     <div class="table-background">
-      <section class="center width-lg">
-        <ul class="grid">
-         ${postList}
-        </ul>
-      </section>
+    
+    <section class="center width-lg">
+    <ul class="grid">
+    ${postList}
+    </ul>
+    </section>
+    </div>
     </div>
     
     

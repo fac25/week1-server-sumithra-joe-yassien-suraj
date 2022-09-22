@@ -1,4 +1,24 @@
+body {
+  background-image: url(/imgs/bg.jpg);
+    background-position: center;
+    background-size:cover;
+    /* height: 90vh; */
+    /* width: 100%; */
+   /*  background-size:auto;
+    background-repeat: no-repeat; */
+    height: 100%;
+    width: 100%;
+}
 
+#form-container {
+  background-color: whitesmoke;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 200px;
+  z-index: 10;
+  padding: 20px 0;
+}
 /* General CSS */
 
 .center {
@@ -64,17 +84,29 @@
 
   }
 
-  .table-background {
+  /* .table-background {
     background-image: url(/imgs/bg.jpg);
+    background-position: center;
+    background-repeat: repeat-y;
+    background-repeat: no-repeat;
     /* height: 90vh; */
     /* width: 100%; */
-    background-size:auto;
+   /*  background-size:auto;
     background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+  }  */
+
+  #table-container {
+    width: 100%;
+    height: max-content;
+    margin-top: 350px;
   }
 
 /* PLate */
 
 .plate {
+  margin: 100px 0;
   position: relative;
   display: inline-flex; 
   flex-direction: column;
