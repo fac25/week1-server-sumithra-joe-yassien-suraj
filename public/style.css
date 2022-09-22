@@ -1,0 +1,136 @@
+
+/* General CSS */
+
+.center {
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .width-sm {
+    max-width: 14rem;
+  }
+  .width-lg {
+    max-width: 40rem;
+  }
+  .width-xl {
+    max-width: 60rem;
+  }
+
+  .stack-sm > * + * {
+    margin-top: 0.5rem;
+  }
+  .stack-md > * + * {
+    margin-top: 1rem;
+  }
+  .stack-lg > * + * {
+    margin-top: 2rem;
+  }
+  .stack-xl > * + * {
+    margin-top: 4rem;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+  .align-start {
+    align-items: start;
+  }
+  .align-end {
+    align-items: end;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+  }
+
+  /* Mobile */
+  @media (max-width: 394px) {
+
+    .width-lg {
+      max-width: 14rem;
+    }
+
+  }
+
+  .table-background {
+    background-image: url(/imgs/bg.jpg);
+    /* height: 90vh; */
+    /* width: 100%; */
+    background-size:auto;
+    background-repeat: no-repeat;
+  }
+
+/* PLate */
+
+.plate {
+  position: relative;
+  display: inline-flex; 
+  flex-direction: column;
+  height: fit-content;
+  width: fit-content;
+  background-color: #e4e4e4;
+  border-radius: 50%;
+  justify-content: center;
+  font-size: 15px;
+  box-shadow: 2px 2px 8px 2px #000;
+  padding: 30px;
+  margin: 20px;
+}
+
+.inner_plate {
+  align-self: center;
+  border-radius: 50%;
+  height: fit-content;
+  width: fit-content;
+  border: #dddddd solid 2px;
+  background-color: #d2d2d2;
+  font-size: 1rem;
+  box-shadow: 0 0 10px 10px #cfcfcf;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+}
+
+.inner_plate img {
+    margin-top: 5px;
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 40%;
+    z-index: 1;
+    position: relative;
+    margin: 25px 2px;
+}
+
+.inner_plate h3 {
+    max-width: 250px;
+    padding: 0 15px;
+}
+
+/*
+.inner_plate::after {
+  content: "";
+  position: absolute;
+  background-color: #e3e3e3;
+  height: 40%;
+  width: 20%;
+  display: block;
+  border-radius: 50%;
+  transform: rotate(34deg);
+  right: 21%;
+  top: 42%;
+  font-size: inherit;
+  box-shadow: -.6em .2em 1em 1em #e3e3e3;
+}
+/*

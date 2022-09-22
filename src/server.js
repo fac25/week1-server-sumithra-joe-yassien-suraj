@@ -16,15 +16,27 @@ const posts = [{
         date: "22/12/2022"
     }];
 
+    
+// CSS
+const staticHandler = express.static("public");
+server.use(staticHandler);
+
+
 server.get("/", (request, response) => {
 
     const postList = posts.map(post => {
-        return `<div>
-        <h2>${post.name}</h2>
-        <p>${post.comments}</p>
-        <p>${post.date}</p>
-        </div>`
-    })
+        return `
+        <div class="plate">
+  <span class="inner_plate">
+    <div>
+      <h2>${post.name}</h2>
+      <p>${post.comments}</p>
+      <p>${post.date}</p>
+    </div>
+  </span>
+</div>`
+        
+    }).join("");
 
 
   response.send(`
@@ -40,37 +52,39 @@ server.get("/", (request, response) => {
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta name="author" content="Yassien, Joe, Suraj, Sumithra">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
 
     <header>
-    <h1> Food Opinions! </h1>
+    <h1 class="center width-sm"> Food Opinions! </h1>
     </header>
 
     <main>
 
     <!-- Submit new comments goes here -->
     <section>
-        <form method="POST">
-             <label for="username">Username</label>
+        <form method="POST" class="center width-sm">
+             <label class="sr-only" for="username">Username</label>
              <input id="username" name="username" placeholder="Name">
              <br>
 
              <br>
              <label for="opinion"></label>
-             <textarea id="opinion" name="opinion"></textarea>
+             <textarea id="opinion" name="opinion"></textarea><br><br>
 
-            <button type="submit">Post</button>
+            <button type="submit">Serve up your opinion!</button>
         </form>
      </section>
-/* hellohello */
-
 
     <!-- User comments go here -->
-    <section>
-        <ul>
-          ${postList}
+    <div class="table-background">
+      <section class="center width-lg">
+        <ul class="grid">
+         ${postList}
         </ul>
-    </section>
+      </section>
+    </div>
+    
     
     </main>
 
