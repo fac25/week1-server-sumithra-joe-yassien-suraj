@@ -1,7 +1,7 @@
 // Returns home page
 // content() has two arguments : post object and error object
 //
-function content(posts, errors = {}) {
+function content(posts, errors = {}, formValues = {}) {
   // Sanitize the user input and makes post list
   const postList = posts.map((post) => {
     return `<li><div class="plate">
@@ -44,12 +44,12 @@ function content(posts, errors = {}) {
 
         <form method="POST" class="center ">
           <label class="sr-only" for="username">Username</label>
-          <input id="username" name="username" placeholder="Name" />
+          <input id="username" name="username" placeholder="Name" value="${formValues.name}" />
           ${validation(errors.name)}
           <br />
           <br />
           <label class="sr-only" for="opinion">Opinions</label>
-          <textarea id="opinion" name="opinion" placeholder="Pineapples on Pizza is a crime!!!"></textarea><br><br>
+          <input type="text" id="opinion" name="opinion" placeholder="Pineapples on Pizza is a crime!!!" value="${formValues.comments}"></textarea><br><br>
           ${validation(errors.comments)}
 
           <button type="submit">Serve up your opinion!</button>
