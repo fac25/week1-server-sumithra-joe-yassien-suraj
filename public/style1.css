@@ -1,0 +1,123 @@
+
+/*=======================================================================================*/
+/*                                  Global                                               */
+/*=======================================================================================*/
+
+:root {
+    /* Colour variables */
+    --black:#000000;
+    --raisinBlack:#202124;
+    --white: #ffffff;
+    --grey: #4d4d4d;
+    --bloodRed:#621708;
+    --rust:#BC3908;
+    --whiteSmoke:#f5f5f5;
+    --silk:#F7D5CA;
+    --paleGreen:#DFE6DB;
+    --seaGreen:#32854B;
+
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html{    
+    font-family: monospace, serif;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--grey);
+    background-image: url(/imgs/bg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+.container{
+    width: 75%;
+    height: 100vh;
+    margin: auto;
+    padding-top: 10px;
+}
+
+/* Header */
+header{
+    background-color: var(--whiteSmoke);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px var(--raisinBlack), 0 0 25px var(--rust)  , 0 0 5px var(--bloodRed) ;
+    
+}
+
+/* Form */
+form{
+    background-image: url(/imgs/form.jpg);
+    background-color: var(--whiteSmoke);
+    width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+
+input, textarea{
+    width: 400px;
+    padding: 12px 50px;
+    border-radius: 5px;
+    justify-content: center;
+   background-color: var(--paleGreen);
+}
+
+button{
+    
+    padding: 15px 20px;
+    background-color: var(--seaGreen);
+    color: var(--whiteSmoke);
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 50vw;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+li{
+
+    /* background-image: url(/imgs/whitePlate); */
+    background-color: var(--silk);
+    border-radius: 50%;
+    padding: 10px 0;
+
+}
+
+/* Error */
+.error
+{
+  color: var(--rust); 
+  font-weight: bold;
+}
+
+/*=======================================================================================*/
+/*                                  Helper                                               */
+/*=======================================================================================*/
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    top: auto;
+    overflow: hidden;
+}
