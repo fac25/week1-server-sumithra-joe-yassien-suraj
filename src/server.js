@@ -24,7 +24,11 @@ const posts = [
 
 // Respond to home route get request
 server.get("/", (request, response) => {
-  const body = content(posts);
+  let emptyFormValues = {
+    name: "",
+    comments: ""
+  }
+  const body = content(posts, {}, emptyFormValues);
   response.send(body);
 });
 
@@ -34,6 +38,8 @@ const bodyParser = express.urlencoded();
 server.post("/", bodyParser, (request, response) => {
   const name = request.body.username;
   const comments = request.body.opinion;
+
+  let formValues = {name, comments};
 
   let errors = {};
 
@@ -46,7 +52,7 @@ server.post("/", bodyParser, (request, response) => {
   }
 
   if (Object.keys(errors).length) {
-    response.status(400).send(content(posts, errors));
+    response.status(400).send(content(posts, errors, formValues));   
   } else {
     const date = new Date().toLocaleDateString("en-GB");
     posts.push({ name, comments, date });
