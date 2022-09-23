@@ -24,8 +24,8 @@ const posts = [
 
 // Respond to home route get request
 server.get("/", (request, response) => {
-  const info = content(posts);
-  response.send(info);
+  const body = content(posts);
+  response.send(body);
 });
 
 const bodyParser = express.urlencoded();
